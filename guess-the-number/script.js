@@ -59,3 +59,6 @@ document.querySelector('.check').addEventListener('click', function () {
   } else {
   }
 });
+
+
+export function getCurrentMonth = msg => 'nl',
