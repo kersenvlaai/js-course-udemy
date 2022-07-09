@@ -1,5 +1,7 @@
 'use strict';
+const scores = [0, 0];
 let currentScore = 0;
+let activePlayer = 0;
 
 const score0El = document.querySelector('#score--0');
 const score1El = document.getElementById('score--1');
@@ -25,7 +27,10 @@ btnRoll.addEventListener('click', function () {
 
   if (dice !== 1) {
     currentScore += dice;
-    current0El.textContent = currentScore;
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore;
   } else {
+    //switch next player
+    activePlayer = activePlayer === 0 ? 1 : 0;
   }
 });
