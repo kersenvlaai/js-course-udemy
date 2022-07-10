@@ -67,7 +67,17 @@ btnHold.addEventListener('click', function () {
   }
 });
 
-btnNew.addEventListener('click', function () {
+btnNew.addEventListener('click', newGame());
+
+function switchPlayer() {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  currentScore = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player0El.classList.toggle('player--active');
+  player1El.classList.toggle('player--active');
+}
+
+function newGame() {
   currentScore = 0;
   activePlayer = 0;
   playing = true;
@@ -84,12 +94,4 @@ btnNew.addEventListener('click', function () {
   btnHold.classList.remove('hidden');
   btnRoll.classList.remove('hidden');
   diceEl.classList.add('hidden');
-});
-
-function switchPlayer() {
-  document.getElementById(`current--${activePlayer}`).textContent = 0;
-  currentScore = 0;
-  activePlayer = activePlayer === 0 ? 1 : 0;
-  player0El.classList.toggle('player--active');
-  player1El.classList.toggle('player--active');
 }
