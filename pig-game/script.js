@@ -67,7 +67,7 @@ btnHold.addEventListener('click', function () {
   }
 });
 
-btnNew.addEventListener('click', newGame());
+btnNew.addEventListener('click', newGame);
 
 function switchPlayer() {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
